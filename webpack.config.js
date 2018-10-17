@@ -1,86 +1,76 @@
-const path              = require('path');
-const webpack           = require('webpack');
-const htmlPlugin        = require('html-webpack-plugin');
-const openBrowserPlugin = require('open-browser-webpack-plugin'); 
-const dashboardPlugin   = require('webpack-dashboard/plugin');
-const autoprefixer      = require('autoprefixer'); 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const webpack = require('webpack');
+const path = require('path');
 
-const PATHS = {
-  app: path.join(__dirname, 'src'),
-  images:path.join(__dirname,'src/assets/'),
-  build: path.join(__dirname, 'dist')
-};
-
-const options = {
-  host:'localhost',
-  port:'1234'
-};
-
-module.exports = {
-  entry: {
-    app: PATHS.app
-  },
-  output: {
-    path: PATHS.build,
-    filename: 'bundle.[hash].js'
-  },
-  devServer: {
-      historyApiFallback: true,
-      hot: true,
-      inline: true,
-      stats: 'errors-only',
-      host: options.host,
-      port: options.port 
+module.exports =  (env, options) => ({
+    entry: [
+        './src/index.js'
+    ],
+    devServer: {
+        contentBase: './dist'
     },
-  module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel',
-        query: {
-          cacheDirectory: true,
-          presets: ['es2015']
-        }
-      },
-      {
-        test: /\.css$/,
-        loaders: ['style', 'css', 'postcss'],
-        include:PATHS.app
-      },
-      
-      {
-        test: /\.(ico|jpg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,        
-        loader: 'file',
-        query: {
-          name: '[path][name].[ext]'
-        }
-      },      
-    ]
-  },
-  postcss: function() {
-    return [
-      autoprefixer({
-        browsers: [
-          '>1%',
-          'last 4 versions',
-          'Firefox ESR',
-          'not ie < 9',
+    devtool: "source-map",
+    module: {
+        rules: [
+            {
+                test: /\.scss$/,
+                use: [options.mode !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'img/'
+                    }
+                }]
+            },
+            {
+                test: /\.(html)$/,
+                use: {
+                    loader: 'html-loader',
+                    options: {
+                        attrs: [':src']
+                    }
+                }
+            },
+            {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env']
+                    }
+                }
+            }
         ]
-      }),
-    ];
-  },
-  plugins:[
-    new dashboardPlugin(),
-    new webpack.HotModuleReplacementPlugin({
-        multiStep: true
-    }),
-    new htmlPlugin({
-      template:path.join(PATHS.app,'index.html'),
-      inject:'body'
-    }),
-    new openBrowserPlugin({
-      url: `http://${options.host}:${options.port}`
-    })
-  ]
-};
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: "css/[name].[contenthash].css",
+        }),
+        new CleanWebpackPlugin(['dist']),
+        new HtmlWebpackPlugin({
+            template: 'src/index.html',
+            inject: 'body',
+            filename: 'index.html'
+        }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            Popper: ['popper.js', 'default'],
+            Util: "exports-loader?Util!bootstrap/js/dist/util",
+            Dropdown: "exports-loader?Dropdown!bootstrap/js/dist/dropdown",
+        })
+    ],
+    output: {
+        filename: '[name].js',
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: ''
+    }
+})
