@@ -1,8 +1,79 @@
 @import "~bootstrap/scss/bootstrap";
 
+//@import "./fontawesome/scss/fontawesome.scss";
+//@import "./fontawesome/scss/solid.scss";
+//@import "./fontawesome/scss/brands.scss";
+
 @import "fonts";
 @import "variables";
 
+@import "navbar";
+
 body {
   background: #fff;
+  font-family: 'Playfair Display', serif;
+  .toprow{
+    background: $coco-white;
+    padding: 5px 0;
+    border-bottom: 1px solid black;
+    @media(max-width: $screen-sm-min){
+      display: none;
+    }
+    .topSubRow2 img{
+      width: 100px;
+    }
+    .topSubRow3{
+      .contact{
+        display: inline-block;
+        background: $verde-chiaro;
+        border-radius: 10000px;
+        padding: 0px 15px;
+        .fa{
+          color: white;
+        }
+        a{
+          color: white;
+          text-decoration: none;
+        }
+        &:hover{
+          background: $giallino;
+        }
+      }
+    }
+  }
+
+  nav{
+    background: $coco-white;
+    border-bottom: 1px solid black;
+    @media(min-width :$screen-sm-min){
+      background: #fff;
+      border: none;
+      .navbar-brand{
+        display: none;
+      }
+      .navbar-toggler{
+        display: none;
+      }
+      #navbarSupportedContent20{
+        display: block;
+        ul{
+          width: 100%;
+          display: flex;
+          align-items: flex-end;
+          flex-direction: row;
+        }
+      }
+    } 
+    .navbar-brand{
+      img{
+        width: 100px;
+      }
+    }
+    .navbar-toggler{
+      border: none;
+         div span{
+        border: 2px solid $verde-scuro;
+      } 
+    }
+  }
 }
