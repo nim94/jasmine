@@ -8,14 +8,23 @@
 @import "variables";
 
 @import "navbar";
+@import "borderBottomSweepToRight($bgColor)";
 
 body {
   background: #fff;
   font-family: 'Playfair Display', serif;
+  nav{
+    @media(max-width: $screen-sm-min){
+      border-bottom: 1px solid lightgray !important;
+    }
+    &.navbar.navbar-light.amber.lighten-4.mb-4{
+      margin-bottom: 0 !important;
+    }
+  }
   .toprow{
     background: $coco-white;
     padding: 5px 0;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid lightgray;
     @media(max-width: $screen-sm-min){
       display: none;
     }
@@ -25,18 +34,20 @@ body {
     .topSubRow3{
       .contact{
         display: inline-block;
-        background: $verde-chiaro;
         border-radius: 10000px;
-        padding: 0px 15px;
+        cursor: pointer;
+        padding: 10px;
+        background: $verde-scuro;
+        margin: 0 5px;
+        &:hover{
+          background: $verde-chiaro;
+        }
         .fa{
           color: white;
         }
         a{
           color: white;
           text-decoration: none;
-        }
-        &:hover{
-          background: $giallino;
         }
       }
     }
@@ -56,14 +67,26 @@ body {
       }
       #navbarSupportedContent20{
         display: block;
-        ul{
-          width: 100%;
-          display: flex;
-          align-items: flex-end;
-          flex-direction: row;
+      } 
+    } 
+    #navbarSupportedContent20{
+      ul{
+        width: 100%;
+        display: flex;
+        flex:1;
+        flex-direction: row-reverse;
+        li{
+          margin: 0 10px;
+          a{
+            color: black;
+            @include borderBottomSweepToRight($verde-scuro);
+          }
+          &:before{
+            border-bottom: 2px solid $verde-scuro; 
+          }
         }
       }
-    } 
+    }
     .navbar-brand{
       img{
         width: 100px;
@@ -74,6 +97,11 @@ body {
          div span{
         border: 2px solid $verde-scuro;
       } 
+    }
+  }
+  div.hero .hero-image{
+    @media(max-width: $screen-sm-min){
+      height: 510px;
     }
   }
 }
