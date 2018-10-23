@@ -20,6 +20,26 @@ body {
     &.navbar.navbar-light.amber.lighten-4.mb-4{
       margin-bottom: 0 !important;
     }
+    .contact-nav-wrapper{
+      @media(min-width: $screen-sm-min){
+        display: none;
+      }
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      li{
+        text-decoration: none;
+        list-style: none;
+        margin: 0 5px;
+        background: $verde-scuro;
+        border-radius: 100%;
+        padding: 5px;
+        a{
+          color: white;
+
+        }
+      }
+    }
   }
   .toprow{
     background: $coco-white;
