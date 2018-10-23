@@ -13,6 +13,11 @@
 body {
   background: #fff;
   font-family: 'Playfair Display', serif;
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
   nav{
     @media(max-width: $screen-sm-min){
       border-bottom: 1px solid lightgray !important;
@@ -81,6 +86,11 @@ body {
       border: none;
       .navbar-brand{
         display: none;
+        &.sticky-brand{
+          display: inline;
+          width: 100px;
+          height: 100px;
+        }
       }
       .navbar-toggler{
         display: none;
