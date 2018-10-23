@@ -9,7 +9,9 @@ import './js/owl-carousel.js'
 import './js/navbar.js'
 
 
-
+$(document).ready(function(){
+    $('.contact, .contact-nav-wrapper').on('click', 'tap', function(){ $(this).css('background', '#c4db0d') });
+});
 
 
 
