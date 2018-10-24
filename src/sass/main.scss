@@ -14,7 +14,11 @@ body {
   background: #fff;
   font-family: 'Playfair Display', serif;
   .sticky {
-    background: rgba(255,255,255,.4);
+    @media(max-width: $screen-sm-min){
+      flex-direction: row-reverse;
+      background-color: $coco-white;
+    }
+    background: rgba(255,255,255, 0.8);
     position: fixed;
     top: 0;
     width: 100%;
@@ -87,7 +91,6 @@ body {
         display: none;
         &.sticky-brand{
           display: inline;
-          background: white;
         }
       }
       .navbar-toggler{
@@ -120,6 +123,11 @@ body {
       }
     }
     .navbar-brand{
+      @media(max-width:$screen-sm-min){
+        &.sticky-brand{
+          display: none;
+        }
+      }
       img{
         width: 100px;
         @media(min-width: $screen-sm-min){
@@ -128,6 +136,7 @@ body {
       }
     }
     .navbar-toggler{
+      
       border: none;
          div span{
         border: 2px solid $verde-scuro;
