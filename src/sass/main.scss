@@ -12,7 +12,15 @@
 
 body {
   background: #fff;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Questrial', sans-serif;
+  font-size: 18px;
+  h1,h2{
+    font-family: 'Lato', sans-serif;
+    font-size: 40px;
+  }
+  a{
+    font-size: 16px;
+  }
   .sticky {
     @media(max-width: $screen-sm-min){
       flex-direction: row-reverse;
@@ -29,6 +37,15 @@ body {
     border-bottom: 1px solid lightgray;
     @media(max-width: $screen-sm-min){
       display: none;
+    }
+    .topSubRow1{
+      h1{
+        font-family: 'Questrial', sans-serif;
+        font-weight: 100;
+        strong{
+          font-weight: 700;
+        }
+      }
     }
     .topSubRow2 img{
       width: 100px;
@@ -76,6 +93,12 @@ body {
         background: $verde-scuro;
         border-radius: 50%;
         padding: 5px;
+        width: 30px;
+        height: 30px;
+        justify-content: center;
+        list-style: none;
+        display: flex;
+        align-items: center;
         a{
           color: white;
 
@@ -136,14 +159,52 @@ body {
       }
     }
     .navbar-toggler{
-      
+      padding: 10px 0.75rem;
       border: none;
          div span{
         border: 2px solid $verde-scuro;
       } 
     }
   }
-  div.hero .hero-image{
-      width: 100%;
+  div.hero{
+    background-image: url('../images/appetizer-1920x1280.jpg');
+    background-attachment: fixed;
+    height: 500px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  } 
+  /* .hero-image{
+    width: 100%;
+  } */
+
+  .sub-content{
+    margin: 15px 0;
+  }
+
+  div.paralax{
+    background-image: url('../images/118870-baked_1920x1280.jpg');
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .scrolltop-button{
+    display: none;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    background: $verde-scuro url("../images/arrow-up2.png") no-repeat center center;
+    background-size: 60%;
+    transition: all 300ms;
+    &.visible{
+      display: block;
+    }
   }
 }
