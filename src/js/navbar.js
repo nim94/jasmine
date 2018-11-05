@@ -28,22 +28,15 @@ $(document).ready(function () {
   $(window).scroll( function(){
   
     if( window.pageYOffset > navHeight ){
-    $('nav').addClass('sticky');
-    $('.navbar-brand').addClass('sticky-brand');
-    $('.scrolltop-button').addClass('visible');
-  } else{
-    $('nav').removeClass('sticky');
-    $('.navbar-brand').removeClass('sticky-brand');
-    $('.scrolltop-button').removeClass('visible');
-  }
+      $('nav').addClass('sticky');
+      $('.navbar-brand').addClass('sticky-brand');
+      $('.scrolltop-button').addClass('visible');
+    } else{
+      $('nav').removeClass('sticky');
+      $('.navbar-brand').removeClass('sticky-brand');
+      $('.scrolltop-button').removeClass('visible');
+    }
 
-});
-
-$('.scrolltop-button').click(function(){
-  $('body, html').animate({
-    scrollTop: 0
-}, 300, 'linear');
-})
-
+  });
 
 });

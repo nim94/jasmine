@@ -8,31 +8,60 @@
     <meta name="description" content="La dietista dello studio di Viareggio elabora piani alimentari personalizzati anche per lo sport, che tengono conto dei bisogni fisiologici, delle caratteristiche e delle necessità individuali.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <link rel="stylesheet" href="/node_modules/owl.carousel2/dist/assets/owl.carousel.min.css" />
-    <link rel="stylesheet" href="/bower_components/owl.carousel2/dist/assets/owl.carousel.min.css" />
-    <link rel="stylesheet" href="animate.min.css">
+    <!-- <link rel="stylesheet" href="/node_modules/owl.carousel2/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/bower_components/owl.carousel2/dist/assets/owl.carousel.min.css" /> -->
 </head>
 
 
 <body>
-
-    <header>
-        <div class="row toprow align-items-center">
-            <div class="topSubRow1 topSubRow col-md-4 text-center">
-                <h1>Dott.ssa <strong>Jasmine Puccetti</strong></h1>
+    <div class="overview">
+        <div class="overview-logo">
+            <div class="overview-center overview-center-logo">
+                <img src="img/logo-jasmine.png" alt="logo" />
             </div>
-            <div class="topSubRow2 topSubRow col-sm-12 col-md-4 text-center">
-                <img src="images/logo-jasmine.png" alt="logo">
+            <div class="overview-center">
+                <div>
+                    <p>
+                        <i class="fas fa-map-marker-alt overview-contatti"></i>
+                        Via aaaaaaaaaaaaaaa, 34, <br /> 
+                        55049 Viareggio (LU)
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <i class="fa fa-phone overview-contatti" aria-hidden="true"></i>
+                        <a href="tel:0000000000" alt="tel">0000000000</a>
+                    </p>
+                    <p>
+                        <i class="fa fa-envelope overview-contatti" aria-hidden="true"></i>
+                        <a href="mailto:mail@mail.it" alt="mail">mail@mail.it</a>
+                    </p>
+                </div>
             </div>
-            <div class="topSubRow3 topSubRow col-md-4 text-center">
-                    <div class="contact">
-                            <i class="fa fa-phone" aria-hidden="true"></i>
-                            <a href="tel:0000000000" alt="tel">0000000000</a>                        
-                    </div>
-                    <div class="contact">
-                            <i class="fa fa-envelope" aria-hidden="true"></i>
-                            <a href="mailto:mail@mail.it" alt="mail">mail@mail.it</a>
-                    </div>
+            <div class="overview-center">
+                <i class="far fa-arrow-alt-circle-down freccia-giu animated pulse infinite"></i>
+            </div>
+        </div>
+    </div>
+    <header id="content-body">
+        <div class="container">
+            <div class="row toprow align-items-center">
+                <div class="topSubRow1 topSubRow col-md-4 text-center">
+                    <h1>Dott.ssa <strong>Jasmine Puccetti</strong></h1>
+                </div>
+                <div class="topSubRow2 topSubRow col-sm-12 col-md-4 text-center">
+                    <img src="img/logo-jasmine.png" alt="logo">
+                </div>
+                <div class="topSubRow3 topSubRow col-md-4 text-center">
+                        <div class="contact">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <a href="tel:0000000000" alt="tel">0000000000</a>                        
+                        </div>
+                        <div class="contact">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <a href="mailto:mail@mail.it" alt="mail">mail@mail.it</a>
+                        </div>
+                </div>
             </div>
         </div>
         
@@ -40,7 +69,7 @@
         <nav class="navbar navbar-light amber lighten-4 mb-4">
 
             <!-- Navbar brand -->
-            <a class="navbar-brand" href="#"><img src="images/logo-jasmine.png"></a>
+            <a class="navbar-brand" href="#"><img src="img/logo-jasmine.png"></a>
         
             <!-- Collapse button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20" aria-controls="navbarSupportedContent20"
@@ -52,7 +81,7 @@
                 <!-- Links -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#contatti">CONTATTI</a>
+                        <a class="nav-link" href="#dove-sono">DOVE SONO</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#servizi">SERVIZI</a>
@@ -76,7 +105,7 @@
             <!--/.Navbar-->
 
         <div class="hero">
-            <!-- <img src="images/appetizer-1920x1280.jpg" alt="hero-image" class="hero-image"> -->
+            <!-- <img src="img/appetizer-1920x1280.jpg" alt="hero-image" class="hero-image"> -->
         </div>
     </header>
 
@@ -96,28 +125,124 @@
             <div class="sub-content">
                 <h2>SERVIZI</h2>
                 <!-- servizi -->
+                
             </div>
         </div>
-        <div class="mappa">
-            <!-- mappa -->
+        <div id="dove-sono">
+            <div id="map">
+                
+            </div>
         </div>
-        <div id="contatti" class="container">
+        <!-- <div id="contatti" class="container">
             <div class="sub-content">
                 <h2>CONTATTI</h2>
                 <p>
 
                 </p>
             </div>
-        </div>
+        </div> -->
     </section>
 
-    <footer>
+    <!-- <footer>
 
-    </footer>
+    </footer> -->
     
     <!-- scrollTop button -->
-    <div class="scrolltop-button"></button>
-<!--     <script src="/node_modules/owl.carousel2/dist/owl.carousel.min.js"></script> --> 
+    <i class="far fa-arrow-alt-circle-up scrolltop-button animated pulse infinite"></i>
+    <!-- mappa -->
+    <script>
+    
+        function initMap() {
+            var uluru = {lat: -25.344, lng: 131.036};
+            var map = new google.maps.Map( document.getElementById('map'), {
+                zoom: 10, 
+                center: uluru,
+                styles: [
+        {
+            "featureType": "all",
+            "elementType": "labels",
+            "stylers": [
+                {
+                    "visibility": "off"
+                }
+            ]
+        },
+        {
+            "featureType": "poi.park",
+            "elementType": "geometry.fill",
+            "stylers": [
+                {
+                    "color": "#aadd55"
+                }
+            ]
+        },
+        {
+            "featureType": "road",
+            "elementType": "geometry.fill",
+            "stylers": [
+                {
+                    "visibility": "on"
+                },
+                {
+                    "color": "#b3b3b3"
+                }
+            ]
+        },
+        {
+            "featureType": "road.highway",
+            "elementType": "geometry.fill",
+            "stylers": [
+                {
+                    "visibility": "on"
+                },
+                {
+                    "color": "#b3b3b3"
+                }
+            ]
+        },
+        {
+            "featureType": "road.highway",
+            "elementType": "labels",
+            "stylers": [
+                {
+                    "visibility": "on"
+                }
+            ]
+        },
+        {
+            "featureType": "road.arterial",
+            "elementType": "labels.text",
+            "stylers": [
+                {
+                    "visibility": "on"
+                }
+            ]
+        },
+        {
+            "featureType": "road.local",
+            "elementType": "labels.text",
+            "stylers": [
+                {
+                    "visibility": "on"
+                }
+            ]
+        },
+        {
+            "featureType": "water",
+            "elementType": "geometry.fill",
+            "stylers": [
+                {
+                    "color": "#0099dd"
+                }
+            ]
+        }
+    ]
+            } );
+            var marker = new google.maps.Marker({position: uluru, map: map});
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=initMap"></script>
+
 </body>
 
 

@@ -1,8 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 
-//@import "./fontawesome/scss/fontawesome.scss";
-//@import "./fontawesome/scss/solid.scss";
-//@import "./fontawesome/scss/brands.scss";
+@import "~animate.css/source/_base.css";
+@import "~animate.css/source/attention_seekers/pulse.css";
 
 @import "fonts";
 @import "variables";
@@ -21,10 +20,54 @@ body {
   a{
     font-size: 16px;
   }
+  .overview{
+    display: block;
+    width: 100%;
+    height: 1500px;
+    background: $coco-white;
+    .overview-logo{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      .overview-center{
+        text-align: center;
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: space-around;
+        i.overview-contatti{
+          color: $verde-chiaro;
+          margin-right: 5px;
+        }
+        a{
+          color: black;
+          text-decoration: underline;
+          &:hover{
+            color: $verde-scuro;
+          }
+        }
+        i.freccia-giu{
+          font-size: 100px;
+          color: $verde-chiaro;
+          margin-top: 50px;
+          transition: all 300ms;
+          &:hover{
+            cursor: pointer;
+            color: $giallino;
+          }
+        }
+        img{
+          width: 200px;
+          height: 200px;
+        }
+      }
+    }
+  }
   .sticky {
     @media(max-width: $screen-sm-min){
       flex-direction: row-reverse;
-      background-color: $coco-white;
+      background-color: white;
     }
     background: rgba(255,255,255, 0.8);
     position: fixed;
@@ -32,7 +75,7 @@ body {
     width: 100%;
   }
   .toprow{
-    background: $coco-white;
+    background: white;
     padding: 5px 0;
     border-bottom: 1px solid lightgray;
     @media(max-width: $screen-sm-min){
@@ -40,6 +83,7 @@ body {
     }
     .topSubRow1{
       h1{
+        font-size: 30px;
         font-family: 'Questrial', sans-serif;
         font-weight: 100;
         strong{
@@ -105,7 +149,7 @@ body {
         }
       }
     }
-    background: $coco-white;
+    background: white;
     border-bottom: 1px solid black;
     @media(min-width :$screen-sm-min){
       background: #fff;
@@ -167,7 +211,7 @@ body {
     }
   }
   div.hero{
-    background-image: url('../images/appetizer-1920x1280.jpg');
+    background-image: url('../img/appetizer-1920x1280.jpg');
     background-attachment: fixed;
     height: 500px;
     width: 100%;
@@ -184,27 +228,31 @@ body {
   }
 
   div.paralax{
-    background-image: url('../images/118870-baked_1920x1280.jpg');
+    background-image: url('../img/118870-baked_1920x1280.jpg');
     height: 500px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
-
+  #map{
+    width: 100%;
+    height: 500px;
+  }
   .scrolltop-button{
     display: none;
-    width: 50px;
-    height: 50px;
+    font-size: 50px;
+    color: $verde-chiaro;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    border-radius: 50%;
-    background: $verde-scuro url("../images/arrow-up2.png") no-repeat center center;
-    background-size: 60%;
     transition: all 300ms;
     &.visible{
       display: block;
+    }
+    &:hover{
+      cursor: pointer;
+      color: $giallino;
     }
   }
 }
