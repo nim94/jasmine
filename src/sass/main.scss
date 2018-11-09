@@ -8,6 +8,8 @@
 @import "~animate.css/source/fading_entrances/fadeInLeft.css";
 @import "~animate.css/source/fading_entrances/fadeInRight.css";
 
+@import "~owl.carousel2/dist/assets/owl.carousel.css";
+
 @import "fonts";
 @import "variables";
 
@@ -26,7 +28,7 @@ body {
     font-size: 16px;
   }
   .overview{
-    background-image: url('../img/background-overview.jpg');
+    background-image: url('../img/dieta-background.jpg');
     background-position: left top;
     background-attachment: fixed;
     background-size: cover;
@@ -46,10 +48,6 @@ body {
       transform: translate(-50%,-50%);
       .overview-center{
         text-align: center;
-        /* display: flex;
-        flex: 1;
-        align-items: center;
-        justify-content: space-around; */
         div{
           p{
             /* padding: 10px; */
@@ -78,7 +76,6 @@ body {
         }
         img{
           width: 200px;
-          height: 200px;
         }
       }
     }
@@ -235,7 +232,7 @@ body {
     }
   }
   div.hero{
-    background-image: url('../img/appetizer-1920x1280.jpg');
+    background-image: url('../img/dieta-insalata.jpg');
     background-attachment: fixed;
     height: 500px;
     width: 100%;
@@ -243,16 +240,24 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
   } 
-  /* .hero-image{
-    width: 100%;
-  } */
-
   .sub-content{
     margin: 15px 0;
   }
-
+  .owl-carousel .item{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
   div.paralax{
-    background-image: url('../img/118870-baked_1920x1280.jpg');
+    background-image: url('../img/dieta-fragole.jpg');
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  div.paralax-sport{
+    background-image: url('../img/sport-fitness.jpg');
     height: 500px;
     background-attachment: fixed;
     background-position: center;
@@ -288,4 +293,21 @@ body {
       color: $giallino;
     }
   }
+}
+
+//custom animate.css
+@keyframes fadeInLeftCustom {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, -50%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 0);
+  }
+}
+
+.fadeInLeftCustom {
+  animation-name: fadeInLeftCustom;
 }
