@@ -28,7 +28,6 @@ body {
     font-size: 16px;
   }
   .overview{
-    background-image: url('../img/dieta-background.jpg');
     background-position: left top;
     background-attachment: fixed;
     background-size: cover;
@@ -41,7 +40,7 @@ body {
       background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,.5) 100%); /* Chrome10-25,Safari5.1-6 */
       background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,.5) 100%);
       border-radius: 10px;
-      box-shadow: 3px 5px 50px rgba(0,0,0,.3);
+      box-shadow: 30px 30px 100px rgba(0, 0, 0, 1);
       position: absolute;
       top: 50%;
       left: 50%;
@@ -232,7 +231,6 @@ body {
     }
   }
   div.hero{
-    background-image: url('../img/dieta-insalata.jpg');
     background-attachment: fixed;
     height: 500px;
     width: 100%;
@@ -249,15 +247,6 @@ body {
     justify-content: center;
   }
   div.paralax{
-    background-image: url('../img/dieta-fragole.jpg');
-    height: 500px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  div.paralax-sport{
-    background-image: url('../img/sport-fitness.jpg');
     height: 500px;
     background-attachment: fixed;
     background-position: center;
@@ -267,7 +256,7 @@ body {
   footer{
     background: #293133;
     overflow: hidden;
-    p{
+    p, a{
       color: white;
       padding: 10px 0;
       font-size: 12px;
@@ -291,6 +280,14 @@ body {
     &:hover{
       cursor: pointer;
       color: $giallino;
+    }
+  }
+  .modal-content{
+    border: none;
+    box-shadow: 20px 20px 50px rgba(0,0,0,.8);
+    .modal-header{
+      background: #293133;
+      color: white;
     }
   }
 }

@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports =  (env, options) => ({
     entry: [
@@ -69,6 +70,7 @@ module.exports =  (env, options) => ({
             Dropdown: "exports-loader?Dropdown!bootstrap/js/dist/dropdown",
         }),
         new FaviconsWebpackPlugin('./favicon.png'),
+        new CopyWebpackPlugin([ { from: 'src/img', to: 'img' } ])
     ],
     output: {
         filename: '[name].js',
