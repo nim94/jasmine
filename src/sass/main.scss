@@ -39,7 +39,7 @@ body {
       background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,.5) 100%); /* FF3.6-15 */
       background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,.5) 100%); /* Chrome10-25,Safari5.1-6 */
       background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,.5) 100%);
-      border-radius: 10px;
+      border-radius: 5px;
       box-shadow: 30px 30px 100px rgba(0, 0, 0, 1);
       position: absolute;
       top: 50%;
@@ -49,7 +49,6 @@ body {
         text-align: center;
         div{
           p{
-            /* padding: 10px; */
             i.overview-contatti{
               color: $verde-chiaro;
               margin-right: 5px;
@@ -59,6 +58,13 @@ body {
               text-decoration: underline;
               &:hover{
                 color: $verde-scuro;
+              }
+              &.no-desktop{
+                text-decoration: none;
+                &:hover{
+                  color: black;
+                  cursor: auto;
+                }
               }
             }
           }
@@ -127,6 +133,7 @@ body {
         justify-content: center;
         align-items: center;
         min-width: 180px;
+        box-shadow: 1px 1px 15px -2px rgba(0,0,0,.5);
         @media(max-width: 1269px){
           padding: 5px;
           margin: 5px;

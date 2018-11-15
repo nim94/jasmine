@@ -31,6 +31,13 @@ $(document).ready(function(){
           scrollTop: $('#content-body').offset().top,
         }, 300, 'linear');
     });
+
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    if ( !(/windows phone|android|iPad|iPhone|iPod/i.test(userAgent)) ){
+        $('.overview-contatti a').addClass('no-desktop');
+        $('.no-desktop').attr('href', '#');
+    } 
+
     $(window).scroll(function() {
         if (isScrolledIntoView( $('#chi-sono') ) === true) {
             $('#chi-sono').addClass('animated fadeInLeft');
