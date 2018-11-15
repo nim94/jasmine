@@ -79,9 +79,9 @@ body {
       }
     }
   }
-  .header-content{
+  /* .header-content{
     padding: 0 20px;
-  }
+  } */
   .sticky {
     @media(max-width: $screen-sm-min){
       flex-direction: row-reverse;
@@ -96,6 +96,8 @@ body {
     background: white;
     padding: 5px 0;
     border-bottom: 1px solid lightgray;
+    margin: 0 0 10px 0;
+    box-shadow: 0 15px 22px -30px black;
     @media(max-width: $screen-sm-min){
       display: none;
     }
@@ -205,6 +207,7 @@ body {
         flex-direction: row-reverse;
         @media(max-width: $screen-sm-min){
           justify-content: center;
+          flex-direction: column-reverse;
         }
         li{
           margin: 0 10px;
