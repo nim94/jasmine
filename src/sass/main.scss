@@ -85,6 +85,9 @@ body {
       }
     }
   }
+  textarea:focus, input:focus, button:focus{
+    outline: none;
+  }
   /* .header-content{
     padding: 0 20px;
   } */
@@ -261,11 +264,32 @@ body {
   } 
   .sub-content{
     margin: 15px 0;
+
+    p {
+      margin-bottom: 50px;
+
+      em {
+        font-style: italic;
+      }
+    }
   }
   .owl-carousel .item{
-    display: flex;
-    flex: 1;
-    justify-content: center;
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+    h4 {
+      color: #4fa800;
+    }
+    div {
+      text-align: center;
+      img {
+        width: 100px;
+        height: 100px;
+        display: inline;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+    }
   }
   div.paralax{
     height: 500px;
